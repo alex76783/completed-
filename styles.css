@@ -1241,5 +1241,81 @@ body.Authentication.username-and-password.isotope-mobile .isotope-challenge-type
     margin-left: 0;
     text-align: center
 }
+/*  */
 
-/*# sourceMappingURL=isotope.min.css.map*/
+
+  /* Absolute Centering Solution */
+  #overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    overflow: auto;
+  }
+
+  #overlay.show {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  #modalBox {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 500px;
+    max-width: 90vw;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    
+    /* Absolute Centering Technique */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    /* For taller content */
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  /* Content Styling */
+  #msg {
+    text-align: center;
+    margin: 0 0 20px 0;
+    color: #333;
+    font-size: 18px;
+    line-height: 1.5;
+  }
+
+  .close-btn {
+    display: block;
+    margin: 20px auto 0 auto;
+    background: crimson;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.2s ease;
+  }
+
+  .close-btn:hover {
+    background: #a52a2a;
+  }
+
+  /* Mobile Responsiveness */
+  @media (max-width: 600px) {
+    #modalBox {
+      padding: 20px;
+      width: 95%;
+    }
+    #msg {
+      font-size: 16px;
+    }
+  }
